@@ -9,12 +9,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @GRpcService
-class ChatService extends HelloWorldGrpc.HelloWorldImplBase {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ChatService.class);
+class HelloWorldService extends HelloWorldGrpc.HelloWorldImplBase {
+    private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldService.class);
 
     private final HelloFormatter helloFormatter;
 
-    ChatService(HelloFormatter helloFormatter) {
+    HelloWorldService(HelloFormatter helloFormatter) {
         this.helloFormatter = helloFormatter;
     }
 

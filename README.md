@@ -44,3 +44,7 @@ grpc_cli type localhost:6565 grpcchat.HelloWorldResponse
 # Call the service
 grpc_cli call localhost:6565 grpcchat.HelloWorld.Hello "name: 'Moritz'"
 ```
+
+# License
+
+Licensed under [Unlicense](https://unlicense.org/).

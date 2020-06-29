@@ -1,0 +1,34 @@
+plugins {
+    id "com.google.protobuf" version "0.8.12"
+    id "idea"
+    id "java-library"
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.12.3'
+    }
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.30.1'
+        }
+    }
+    generateProtoTasks {
+        ofSourceSet('main')*.plugins {
+            grpc {}
+        }
+    }
+}
+
+dependencies {
+    api "io.grpc:grpc-protobuf:1.30.2"
+    api "io.grpc:grpc-stub:1.30.2"
+    compileOnly "org.apache.tomcat:annotations-api:6.0.53"
+}
+
+idea {
+    module {
+        sourceDirs += file("${projectDir}/build/generated/source/proto/main/java")
+        sourceDirs += file("${projectDir}/build/generated/source/proto/main/grpc")
+    }
+}

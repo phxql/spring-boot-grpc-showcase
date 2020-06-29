@@ -1,0 +1,16 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'de.mkammerer.springgrpc.client.Client'
+    applicationDefaultJvmArgs = ["-Xmx32m"]
+}
+
+dependencies {
+    implementation project(':protocol')
+
+    runtimeOnly 'ch.qos.logback:logback-classic:1.2.3'
+    implementation "org.slf4j:slf4j-api:1.7.23"
+    implementation "io.grpc:grpc-netty:1.30.2"
+}

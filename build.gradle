@@ -1,0 +1,14 @@
+group = 'de.mkammerer.springgrpc'
+version = '0.0.1-SNAPSHOT'
+
+subprojects {
+    apply plugin: "java"
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}

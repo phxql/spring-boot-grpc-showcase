@@ -1,0 +1,3 @@
+include 'server', 'client', 'protocol'
+
+rootProject.name = 'Spring-gRPC'
